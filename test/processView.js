@@ -28,7 +28,7 @@ application.registerActions(app);
 var req = {};
 var res = {
     write: function(text) { this.output = text},
-    end: function() {}
+    end: function() { this.endcalled = true; }
 };
 
 app.gets['/'](req, res);
@@ -36,5 +36,5 @@ app.gets['/'](req, res);
 assert.ok(req.processed);
 assert.ok(res.processed);
 assert.equal(typeof res.output, "undefined");
-
+assert.ok(res.endcalled);
 
