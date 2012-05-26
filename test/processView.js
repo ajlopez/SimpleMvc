@@ -4,12 +4,17 @@ var assert = require('assert'),
     
 var application = simplemvc.createApplication();
 
-application.get('/', function(req, res, next)
-    {
-        req.processed = true;
-        res.processed = true;
-    });
-    
+// Register action by view name
+
+application.get('/', 'home');
+
+// Register view
+
+application.view('home', function(req, res, model, context) {
+    req.processed = true;
+    res.processed = true;
+});
+
 var app = {
     gets: {},
     get: function(url, fn)
@@ -20,14 +25,16 @@ var app = {
 
 application.registerActions(app);
 
-assert.ok(app.gets['/']);
-assert.equal(typeof app.gets['/'], "function");
-
 var req = {};
-var res = {};
+var res = {
+    write: function(text) { this.output = text},
+    end: function() {}
+};
 
 app.gets['/'](req, res);
 
 assert.ok(req.processed);
 assert.ok(res.processed);
+assert.equal(typeof res.output, "undefined");
+
 
