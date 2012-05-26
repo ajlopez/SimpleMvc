@@ -1,7 +1,7 @@
 { "name": "simplemvc"
 , "description": "Simple MVC for Node.js"
 , "keywords": [ "mvc", "express", "nodejs" ]
-, "version": "0.1.0-alpha1"
+, "version": "0.1.0-alpha2"
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
 , "repository": { "type": "git", "url": "git://github.com/ajlopez/SimpleMvc.git" }
 , "main": "./lib/simplemvc.js"
