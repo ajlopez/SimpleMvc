@@ -7,9 +7,10 @@ var express = require('express'),
 
 var mvc = simplemvc.createApplication();
     
-// Register action with file view name, no process
+// Register actions with file view name, no process
 
 mvc.get('/', 'home');
+mvc.get('/about', 'about');
 
 // Customers
 
@@ -55,6 +56,7 @@ mvc.get('/customer/:id', function(req, res, next)
 // Register views
 
 mvc.view('home', path.join(__dirname, 'home.tpl'));
+mvc.view('about', path.join(__dirname, 'about.tpl'));
 mvc.view('customer-list', path.join(__dirname, 'customer-list.tpl'));
 mvc.view('customer-view', path.join(__dirname, 'customer-view.tpl'));
 
