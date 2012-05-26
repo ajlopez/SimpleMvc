@@ -11,7 +11,7 @@ var mvc = simplemvc.createApplication();
 
 mvc.get('/', 'hello');
 
-// Register view as string
+// Register view as string from file
 
 mvc.view('hello', path.join(__dirname, 'hello.html'));
 
