@@ -1,4 +1,9 @@
 <# include('header', { title: 'Customers' }); #>
+
+<div class='actions'>
+<a href='/customer/new'>New Customer</a>
+</div>
+
 <table>
 <tr>
 <th>Id</th>

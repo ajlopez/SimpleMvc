@@ -1,4 +1,7 @@
 <# include('header', { title: 'Customer' }); #>
+<div class='actions'>
+<a href='/customer/edit/${model.customer.id}'>Edit Customer</a>
+</div>
 <fieldset>
 	<div class="display-label">
 	Id

@@ -33,4 +33,3 @@ app.gets['/'](req, res);
 
 assert.ok(res.output);
 assert.ok(res.output.indexOf("Hello, world") >= 0);
-
