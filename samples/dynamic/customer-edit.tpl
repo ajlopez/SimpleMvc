@@ -1,6 +1,6 @@
 <# include('header', { title: 'Edit Customer' }); #>
 <div class='actions'>
-<a href='/customer/${model.customer.id}'>View Customer</a>
+<a href='/customer/${customer.id}'>View Customer</a>
 </div>
 
 <form method='post'>
@@ -9,7 +9,7 @@
 	Name
 	</div>
 	<div class="editor-field">
-	<input type='text' name='name' value='${model.customer.name}'/>
+	<input type='text' name='name' value='${customer.name}'/>
 	</div>
 	<div class="editor-field">
 	<input type='submit' value='Accept'/>

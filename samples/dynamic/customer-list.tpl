@@ -9,8 +9,8 @@
 <th>Id</th>
 <th>Name</th>
 </tr>
-<# for (var n in model.customers) { 
-	var customer = model.customers[n];
+<# for (var n in customers) { 
+	var customer = customers[n];
 #>
 <tr>
 <td><a href='/customer/${customer.id}'>${customer.id}</a></td>
