@@ -10,7 +10,8 @@
     "test": "node ./test.js"
   }
 , "dependencies": {
-    "express": "*" 
+    "express": "*",
+	"simpletpl": "*"
   }
 , "devDependencies": {
   }
