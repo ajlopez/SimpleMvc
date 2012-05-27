@@ -19,7 +19,7 @@ assert.equal(doTemplate("${z}, ${x}"), "Hola, World");
 
 function doTemplate(text)
 {
-    var template = $.compile(text, context);
+    var template = $.compile(text, { context: context });
     return template(model);
 }
 
