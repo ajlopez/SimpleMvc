@@ -21,7 +21,8 @@ server.configure(function() {
         mvc.registerActions(app);
   }));
   // register the views, view engine
-  // an optional third parameter is the global context/model to use in all views
+  // an optional third parameter is view options
+  // you can use options = { context: globalModelToUseInAllViews; }
   mvc.registerViews(server, path.join(__dirname, 'views'));
 });
 
