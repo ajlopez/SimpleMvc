@@ -40,7 +40,8 @@ var req = {};
 var res = {
 	output: '',
     write: function(text) { this.output += text},
-    end: function() {}
+	send: function(text) { this.output = text; this.endcalled = true; },
+    end: function() { this.endcalled = true; }
 };
 
 app.gets['/'](req, res);
@@ -51,7 +52,8 @@ assert.equal(res.output, "Hello, world");
 var res2 = {
 	output: '',
     write: function(text) { this.output += text},
-    end: function() {}
+	send: function(text) { this.output = text; this.endcalled = true; },
+    end: function() { this.endcalled = true; }
 };
 
 app.gets['/home2'](req, res2);

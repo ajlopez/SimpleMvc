@@ -24,7 +24,9 @@ application.registerActions(app);
 
 var req = {};
 var res = {
-    write: function(text) { this.output = text},
+	output: '',
+    write: function(text) { this.output += text},
+	send: function(text) { this.output = text},
     end: function() {}
 };
 

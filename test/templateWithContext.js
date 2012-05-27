@@ -2,15 +2,6 @@
 var $ = require('../lib/template.js')
   , assert = require('assert');
   
-function OutputWriter() {
-    this.content = '';
-};
-
-OutputWriter.prototype.write = function(text)
-{
-    this.content += text;
-};
-
 var context = {};
 
 context.x = "World";
@@ -27,11 +18,9 @@ doTemplate("<# include('foo'); #>");
 
 assert.equal(result, 'foo');
 
-function doTemplate($text)
+function doTemplate(text)
 {
-    var $output = new OutputWriter();
-    var $template = $.compileTemplate($text);
-    $template($output, null, context);
-    return $output.content;
+    var template = $.compileTemplate(text);
+    return template(null, context);
 }
 

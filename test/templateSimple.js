@@ -2,15 +2,6 @@
 var $ = require('../lib/template.js')
   , assert = require('assert');
   
-function OutputWriter() {
-    this.content = '';
-};
-
-OutputWriter.prototype.write = function(text)
-{
-    this.content += text;
-};
-
 assert.equal(doTemplate("Hello, World"), "Hello, World");
 
 assert.equal(doTemplate("1 + 2 = ${1+2}"), "1 + 2 = 3");
@@ -23,11 +14,9 @@ assert.ok(result.indexOf("123456") >= 0);
 assert.ok(result.indexOf("Current time") >= 0);
 assert.ok(result.indexOf("#>") < 0);
 
-function doTemplate($text)
+function doTemplate(text)
 {
-    var $output = new OutputWriter();
-    var $template = $.compileTemplate($text);
-    $template($output, null, {});
-    return $output.content;
+    var template = $.compileTemplate(text);
+    return template(null, {});
 }
 
